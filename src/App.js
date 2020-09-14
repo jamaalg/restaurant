@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter } from 'react-router-dom'
 import { Cheese } from "./components/cheese/Cheese";
 import { Login } from "./components/login/Login";
 import { Navbar } from "./components/navbar/Navbar";
@@ -94,18 +95,19 @@ class App extends React.Component {
     }
 
     return (
-      <div className='App'>
-        <header className='App-header'>
-          <h1> App Component</h1>
-          <Navbar />
-          <Login />
-          <button style={style} onClick={this.toggleCheeseHandler}>
-            Toggle Cheeses
-          </button>
-
-          {cheeses}
-        </header>
-      </div>
+      <BrowserRouter>
+        <div className='App'>
+          <header className='App-header'>
+            <h1> App Component</h1>
+            <Navbar />
+            <Login />
+            <button style={style} onClick={this.toggleCheeseHandler}>
+              Toggle Cheeses
+            </button>
+            {cheeses}
+          </header>
+        </div>
+      </BrowserRouter>
     );
   }
 }
